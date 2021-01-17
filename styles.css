@@ -1,0 +1,96 @@
+#background {
+    width: 100%;
+    position: relative;
+    padding-top: 56.25%;
+    margin-top: 3vw;
+}
+
+#my-container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.main-body {
+    position: absolute;
+    top: 3vw;
+    left: 3vw;
+    bottom: 3vw;
+    right: 3vw;
+}
+
+.q-text {
+    height: 45%;
+}
+.q-text p {
+    font-size: 2.5vw;
+}
+
+.q-text h1 {
+    font-size: 4vw;
+}
+
+.guest-p {
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    border: 2px solid white;
+    height: 19.5vw;
+}
+
+.guest-active {
+    border-color: #0d6efd;
+}
+
+.guest-inactive {
+    opacity: 0.5;
+}
+
+.profile {
+    margin: 0 auto;
+    border-radius:50%;
+    width: 40%;
+    position: relative;
+    padding-top: 40%;
+    overflow: hidden;
+}
+
+.g-img {
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.g-name {
+    margin: 1vw auto;
+    text-align: center;
+    font-size: 1.5vw;
+}
+
+.g-desc {
+    text-align: center;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    font-size: 1vw;
+}
+
+.left-nav {
+    text-align: right;
+}
+
+svg {
+    height: 2vw;
+    width: 2vw;
+    color: #6c757d;
+}
+
+svg:hover {
+    color: #0d6efd;
+    cursor: pointer;
+}
+
+.nav-row {
+    margin-top: 3vw;
+}
+
