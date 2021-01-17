@@ -19,24 +19,32 @@
 }
 
 .q-text {
-    height: 45%;
+    height: 50%;
 }
 .q-text p {
-    font-size: 2.5vw;
+    font-size: 2.2vw;
+}
+
+.q-text ul {
+    font-size: 1.8vw;
 }
 
 .q-text h1 {
     font-size: 4vw;
 }
 
+.q-primary {
+    color: #0d6efd;
+}
+
 .guest-p {
     padding-top: 1vw;
     padding-bottom: 1vw;
     border: 2px solid white;
-    height: 19.5vw;
+    height: 20vw;
 }
 
-.guest-active {
+.guest-active, .guest-p:hover {
     border-color: #0d6efd;
 }
 
@@ -51,6 +59,10 @@
     position: relative;
     padding-top: 40%;
     overflow: hidden;
+}
+
+.guest-p:hover {
+    cursor: pointer;
 }
 
 .g-img {
@@ -70,9 +82,9 @@
 
 .g-desc {
     text-align: center;
-    padding-left: 1vw;
-    padding-right: 1vw;
-    font-size: 1vw;
+    padding-left: 0.8vw;
+    padding-right: 0.8vw;
+    font-size: 1.1vw;
 }
 
 .left-nav {
@@ -85,7 +97,7 @@ svg {
     color: #6c757d;
 }
 
-svg:hover {
+svg:hover, li:hover {
     color: #0d6efd;
     cursor: pointer;
 }

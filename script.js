@@ -1,18 +1,42 @@
 const questionList = [
-    'BI产品一般都要求3年以上经验的社招，那new grad如果想做BI产品经理应该先从BI相关的data engineer/data analyst做起，还是直接找BI产品岗（几乎没见过校招BI PM...）',
-    '想了解大家如何提升自己的产品能力',
-    '国外产品的团队架构是什么样的？PM、开发、UI的配比是怎么样的？',
-    '和同部门其他的PM同事是如何协作的？比如说分工方式、知识管理、推锅？',
-    '如果有数据分析需求的话，是以什么形式参与在实际业务中的？',
-    '在国内/国外的产品岗位中，对于技术的了解程度有没有硬性指标？有什么时候会觉得“我了解到这儿就差不多了”？',
-    '对于团队和产品怎么去确认自己的话语权？',
-    '怎么发掘自己的技能树并点上自己的技能点？作为PM，会怎么提升自己的专业知识？',
+    {
+        subtitle: '产品经理是……？',
+        questions: ['我所在公司对产品经理的定义', '国内产品经理眼花缭乱的职位之间到底有什么区别？'],
+    },
+
+    {
+        subtitle: '产品经理的工作日常',
+        questions:[
+        '产品经理的一天都在做什么？花在每类事情上的时间分布是？每天总工作时长为多久？', '产品经理最重要的工作技能是什么？', '产品经理最经常使用的工具是什么？']
+    },
+
+    {
+        subtitle: '产品经理的酸甜苦辣',
+        questions: ['工作里，我最有成就感的事情是……',
+            '工作里，最让我烦恼和头秃的事情是……我最不喜欢的工作内容是……'
+        ],
+    },
+     {
+         subtitle:'我们是产品经理，我们都是女孩子',
+         questions: ['所在公司人员性别/种族比例', '女性产品经理的职业天花板',
+         '职业发展道路思考'],
+    },
+    {
+        subtitle:'作为产品经理，我这样点亮技能树',
+        questions: ['非技术出身产品经理对技术该有什么程度的了解', '非技术出身产品经理如何避免成为传话筒', '产品经理如何提升产品能力和专业知识? 怎么发掘自己的技能树并点上技能点？'],
+    },
+    {
+        subtitle: '和我一起来做产品经理吧!',
+        questions: ['产品经理所需要的性格特质','如何找到第一份实习; 如何找到一份工作', '作为数据科学家/分析师/程序媛/设计师，如何转行成为产品经理'],
+    },
 ];
 
 let currQuesIdx = 0;
 let currQues = ''
 
 const renderQ = function() {
+
+    $('.q-text ul').empty()
 
     if (currQuesIdx >= 0 && currQuesIdx < questionList.length) {
         currQues = questionList[currQuesIdx]; 
@@ -23,8 +47,15 @@ const renderQ = function() {
         } else if (currQuesIdx >= questionList.length) {
             currQuesIdx = questionList.length
         }
+        $('.q-text p').text(currQues)
+        return
     }
-    $('.q-text p').text(currQues)
+
+    $('.q-text p').text(currQues.subtitle)
+
+    currQues.questions.forEach(function(question) {
+        $('.q-text ul').append(`<li>${question}</li>`)
+    })
 }
 
 const resetStatus = function() {
@@ -35,10 +66,18 @@ const resetStatus = function() {
     }
 }
 
+const resetQColor = function() {
+    $ques = $('li')
+    for (let i = 0; i < $ques.length; i++) {
+        $ques.eq(i).removeClass('q-primary')
+    }
+}
+
 $('.right-nav').on('click', function(e) {
     e.preventDefault()
     currQuesIdx += 1
     renderQ()
+    resetQColor()
     resetStatus()
 })
 
@@ -46,6 +85,7 @@ $('.left-nav').on('click', function(e) {
     e.preventDefault()
     currQuesIdx -= 1
     renderQ()
+    resetQColor()
     resetStatus()
 })
 
@@ -56,5 +96,12 @@ $('.guest-p').on('click', function(e) {
     $(e.target).closest('.guest-p').addClass('guest-active')
 })
 
+$('ul').on('click', function(e) {
+    e.preventDefault()
+    resetQColor()
+    $(e.target).addClass('q-primary')
+})
+
 renderQ()
 resetStatus()
+resetQColor()
