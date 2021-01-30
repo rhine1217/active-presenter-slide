@@ -42,7 +42,7 @@
     padding-top: 1vw;
     padding-bottom: 1vw;
     border: 2px solid white;
-    height: 20vw;
+    height: 21vw;
 }
 
 .guest-active {
@@ -84,8 +84,8 @@
 
 .g-desc {
     text-align: center;
-    padding-left: 0.8vw;
-    padding-right: 0.8vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
     font-size: 1.1vw;
 }
 
